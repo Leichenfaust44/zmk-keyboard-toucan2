@@ -1,29 +1,20 @@
-# Toucan Keyboard — Gallium ZMK Config
+# Toucan2 Keyboard — Gallium ZMK Config
 
-[![Keymap](https://github.com/Leichenfaust44/zmk-keyboard-toucan2/blob/win_mode/keymap-drawer/beekeeb.jpg)](https://github.com/Leichenfaust44/zmk-keyboard-toucan2/blob/win_mode/keymap-drawer/beekeeb.jpg)
+[![Keymap](https://github.com/Leichenfaust44/zmk-keyboard-toucan2/raw/win_mode/keymap-drawer/beekeep.jpg)](https://github.com/Leichenfaust44/zmk-keyboard-toucan2/blob/win_mode/keymap-drawer/beekeep.jpg)
 
-Custom ZMK firmware for the [beekeeb Toucan 2 Keyboard]([https://beekeeb.com/toucan-keyboard2/]) using the **Gallium v2** Columnar Staggered layout, optimised for Swiss German (DE-CH) input.
+Custom ZMK firmware for the [beekeeb Toucan2 Keyboard](https://beekeeb.com/) using the **Gallium v2** Columnar Staggered layout, optimised for Swiss German (DE-CH) input on Windows.
 
 This config uses the **5-col layout**, making key positions identical to the [Piantor Pro BT](https://github.com/Leichenfaust44/zmk-config) config for easy cross-board maintenance.
 
-[![Keymap](https://github.com/Leichenfaust44/zmk-keyboard-toucan/raw/main/keymap-drawer/toucan.svg)](https://github.com/Leichenfaust44/zmk-keyboard-toucan/blob/main/keymap-drawer/toucan.svg)
+[![Keymap](https://github.com/Leichenfaust44/zmk-keyboard-toucan2/raw/win_mode/keymap-drawer/toucan.svg)](https://github.com/Leichenfaust44/zmk-keyboard-toucan2/blob/win_mode/keymap-drawer/toucan.svg)
 
 ---
 
 ## Display
 
-The left half features a **nice!view gem** display (Sharp Memory LCD). It shows the following widgets from top to bottom:
+The left half features a **nice!view gem** display (Sharp Memory LCD), using the stock widget set from the Toucan2 template (battery level per half, active layer, BLE profile). Display configuration via [`nice_view_gem`](https://github.com/M165437/nice-view-gem).
 
-[![Display](https://github.com/Leichenfaust44/zmk-keyboard-toucan/raw/main/keymap-drawer/toucan_display.svg)](https://github.com/Leichenfaust44/zmk-keyboard-toucan/blob/main/keymap-drawer/toucan_display.svg)
-
-| Widget | Description |
-|-|-|
-| **Batteries** | Charge bars for local (left) and peripheral (right) halves |
-| **WPM chart** | Bar chart of last 10 WPM values, fixed range 0–100 |
-| **Active layer** | Current layer name displayed large in the middle |
-| **BLE profile** | 5 profile dots, active profile filled |
-
-Display configuration via [`nice_view_gem`](https://github.com/M165437/nice-view-gem).
+> Note: the battery widget currently shows level as 10 dots + a percentage number, updated periodically (not on every keystroke). A charging indicator (bolt icon) is declared in the widget code but not currently wired up — absence of the icon doesn't mean it isn't charging.
 
 ---
 
@@ -130,7 +121,7 @@ F12  F1  F2  F3  —  |   —   —    —    —    —
 
 ## Nav (Layer 3) — Navigation and System Controls
 
-Navigation on the right, system/media controls on the left. Activated by holding MagicKey. **Trackpad acts as scroll wheel on this layer.**
+Navigation on the right, system/media controls on the left. Activated by holding MagicKey.
 
 ```
 BtClrAll**  Next  VolUp  RGB_OFF  StudioUnlk  |  PgUp  Home   Up    End    BtClr**
@@ -140,7 +131,7 @@ Boot**      Play  Mute   MicMute  —           |  CapsL  —    PrtSc   —    
 
 **Thumb cluster:** `BT_PRV | BT(0) | BT_NXT | Desktop W | — | Desktop P`
 
-`Desktop W/P` = `Ctrl+Gui+Left/Right` (macOS Spaces: vorherige/nächste Fläche).
+`Desktop W/P` = `Ctrl+Gui+Left/Right` (Windows virtuelle Desktops: vorheriger/nächster Desktop).
 
 `**` = tap-dance safety: single tap does nothing, double-tap triggers the action (BtClr, BtClrAll, Boot).  
 `MicMute` = `LGui+RAlt+K` shortcut.  
@@ -150,26 +141,17 @@ Boot**      Play  Mute   MicMute  —           |  CapsL  —    PrtSc   —    
 
 ## Trackpad Behaviour
 
-The Toucan's Cirque Pinnacle trackpad (right half) is always active as a mouse cursor. Behaviour changes by layer:
+The Toucan2's Azoteq TPS43 trackpad (right half, I2C) is always active as a mouse cursor with native gesture detection — no layer-switching happens on touch.
 
-| Layer | Trackpad behaviour |
+| Gesture | Result |
 |-|-|
-| **Base (0)** | Cursor movement + tap-to-click (left click) |
-| **Sym (1)** | Cursor movement + tap-to-click |
-| **FN (2)** | Cursor movement + tap-to-click |
-| **Nav (3)** | Scroll wheel (horizontal scroll inverted) |
-
-**Mouse clicks:**
-
-| Action | Result |
-|-|-|
-| Tap touchpad | Left click (tap-to-click) |
-| `M+W` combo (Base layer) | Left click |
-| `Q+M` combo (Base layer) | Right click |
-
-Pointer speed: 3.5× (`zip_xy_scaler 350 100`). Scroll speed: 1/5× (`zip_scroll_scaler 1 5`).
-
-Power management: trackpad enters idle after 30 seconds of no keypresses, waking in ~300ms on touch. Deep sleep after 60 minutes.
+| Cursor movement | Mouse pointer |
+| 1-finger tap | Left click |
+| 2-finger tap | Right click |
+| 2-finger move | Scroll (vertical + horizontal) |
+| Tap, hold, and move | Click & drag |
+| Pinch | Zoom (`Ctrl+-` / `Ctrl+=`) |
+| 4-direction swipe | Windows task view / virtual desktop switch (`Win+Tab` / `Win+→` / `Win+D` / `Win+←`) |
 
 ---
 
@@ -253,7 +235,7 @@ Destructive BT operations (BT\_CLR, BT\_CLR\_ALL) require a double-tap on Nav la
 
 * Each half has an ON/OFF switch (OFF = fully disconnected, ON = sleep when idle)
 * Deep sleep after 60 minutes of inactivity
-* Trackpad enters idle after 30 seconds of no keypresses to save power (~1.7 mA idle vs 2.9 mA active)
+* Battery level reported periodically (see [Display](#display) note above)
 
 ---
 
@@ -263,7 +245,7 @@ Destructive BT operations (BT\_CLR, BT\_CLR\_ALL) require a double-tap on Nav la
 2. Push → GitHub Actions builds automatically
 3. Download the firmware artifact from the Actions tab
 
-The keymap, behaviors, and combos use **identical key positions and logic** to the [Piantor Pro BT config](https://github.com/Leichenfaust44/zmk-config) — changes can be ported between boards with minimal adaptation.
+The keymap, behaviors, and combos use **identical key positions and logic** to the [Piantor Pro BT config](https://github.com/Leichenfaust44/zmk-config) — changes can be ported between boards with minimal adaptation. Note that Toucan2 additionally depends on the `zmk_driver_azoteq` and `zmk-input-zoom` west modules for the trackpad, which Piantor doesn't need.
 
 **Tools:**
 
@@ -277,5 +259,9 @@ The keymap, behaviors, and combos use **identical key positions and logic** to t
 Based on [ZMK Firmware](https://zmk.dev), MIT License.
 
 The included shield `nice_view_gem` is modified from [M165437/nice-view-gem](https://github.com/M165437/nice-view-gem), MIT License.
+
+The trackpad driver is based on [geeksville/zmk_driver_azoteq](https://github.com/geeksville/zmk_driver_azoteq).
+
+The pinch-zoom input processor is from [beekeeb/zmk-input-zoom](https://github.com/beekeeb/zmk-input-zoom).
 
 The embedded font QuinqueFive is designed by GGBotNet, licensed under the SIL Open Font License, Version 1.1.
