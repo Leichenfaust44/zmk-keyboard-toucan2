@@ -12,7 +12,6 @@ Custom ZMK firmware for the [beekeeb Toucan2 Keyboard](https://beekeeb.com/) usi
 
 The left half features a **nice!view gem** display (Sharp Memory LCD), using the stock widget set from the Toucan2 template (battery level per half, active layer, BLE profile). Display configuration via [`nice_view_gem`](https://github.com/M165437/nice-view-gem).
 
-> Note: the battery widget currently shows level as 10 dots + a percentage number, updated periodically (not on every keystroke). A charging indicator (bolt icon) is declared in the widget code but not currently wired up — absence of the icon doesn't mean it isn't charging.
 
 ---
 
