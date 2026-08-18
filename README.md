@@ -242,7 +242,6 @@ Destructive BT operations (BT\_CLR, BT\_CLR\_ALL) require a double-tap on Nav la
 2. Push → GitHub Actions builds automatically
 3. Download the firmware artifact from the Actions tab
 
-The keymap, behaviors, and combos use **identical key positions and logic** to the [Piantor Pro BT config](https://github.com/Leichenfaust44/zmk-config) — changes can be ported between boards with minimal adaptation. Note that Toucan2 additionally depends on the `zmk_driver_azoteq` and `zmk-input-zoom` west modules for the trackpad, which Piantor doesn't need.
 
 **Tools:**
 
