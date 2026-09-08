@@ -140,7 +140,7 @@
                 &kp B                    &kp L                &kp D                     &kp C                    &kp V      &kp J      &kp F                    &kp O                     &kp U                &mt DE_EXCL DE_QMARK
                 &hml_slow LEFT_GUI N     &hml_slow LEFT_ALT R &hml_slow LEFT_CONTROL T  &hml_shift LEFT_SHIFT S  &kp G      &kp DE_Y   &hmr_shift RIGHT_SHIFT H &hmr_slow RIGHT_CONTROL A &hmr_slow RIGHT_ALT E &hmr_slow RIGHT_GUI I
                 &kp X                    &kp Q                &kp M                     &kp W                    &kp DE_Z   &kp K      &kp P                    &mt DE_SEMI DE_COMMA      &mt DE_COLON DE_DOT  &mt DE_UNDER DE_MINUS
-                                         &lt 2 ESCAPE          &magic_key 3 0           &bspc_del                &&kp CAPSLOCK  &kp DE_SPACE           &glyph_tap 1 1
+                                         &lt 2 ESCAPE          &magic_key 3 0           &bspc_del                &kp CAPSLOCK  &kp DE_SPACE           &glyph_tap 1 1
             >;
         };
 
