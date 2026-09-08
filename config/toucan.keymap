@@ -140,7 +140,7 @@
                 &kp B                    &kp L                &kp D                     &kp C                    &kp V      &kp J      &kp F                    &kp O                     &kp U                &mt DE_EXCL DE_QMARK
                 &hml_slow LEFT_GUI N     &hml_slow LEFT_ALT R &hml_slow LEFT_CONTROL T  &hml_shift LEFT_SHIFT S  &kp G      &kp DE_Y   &hmr_shift RIGHT_SHIFT H &hmr_slow RIGHT_CONTROL A &hmr_slow RIGHT_ALT E &hmr_slow RIGHT_GUI I
                 &kp X                    &kp Q                &kp M                     &kp W                    &kp DE_Z   &kp K      &kp P                    &mt DE_SEMI DE_COMMA      &mt DE_COLON DE_DOT  &mt DE_UNDER DE_MINUS
-                                         &lt 2 ESCAPE          &magic_key 3 0           &bspc_del                &kp LSHIFT  &kp DE_SPACE           &glyph_tap 1 1
+                                         &lt 2 ESCAPE          &magic_key 3 0           &bspc_del                &&kp CAPSLOCK  &kp DE_SPACE           &glyph_tap 1 1
             >;
         };
 
@@ -199,7 +199,7 @@
             bindings = <
                 &td_bt_clr_all  &kp C_NEXT  &kp C_VOL_UP  &rgb_ug RGB_OFF  &studio_unlock   &kp PG_UP     &kp HOME  &kp UP    &kp END    &td_bt_clr
                 &none           &kp C_PREV  &kp C_VOL_DN  &none            &none            &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &td_reset
-                &td_boot        &kp C_PP    &kp C_MUTE    &kp LG(LA(K))   &none            &kp CAPSLOCK  &none     &kp PSCRN &none      &td_boot
+                &td_boot        &kp C_PP    &kp C_MUTE    &kp LG(LA(K))   &none            &none  &none     &kp PSCRN &none      &td_boot
                                 &bt BT_PRV  &bt BT_SEL 0  &bt BT_NXT      &kp LC(LG(LEFT))    &none   &kp LC(LG(RIGHT))
             >;
         };
