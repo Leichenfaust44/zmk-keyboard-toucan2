@@ -33,7 +33,7 @@
  * Right: H=Shift(fast)  A=Ctrl(slow)  E=Alt(slow)  I=Super(slow)
  *
  * Thumbs:
- * ESC(hold=FN) | MagicKey(hold=Nav) | Backspace/Del | Shift | Space | Sym(tap=num_word,hold=layer)
+ * ESC(hold=FN) | MagicKey(hold=Nav) | Backspace/Del | CapsLock | Space | Sym(tap=num_word,hold=layer)
  *
  * ============================================================
  * Sym (Layer 1): Numbers and symbols
@@ -45,7 +45,7 @@
  * Home row: 0 4 5 6 — | { } ^ ` ~
  * Bot row: . 1 2 3 — | ` ´ § ° —
  *
- * Thumbs: to(0) | SPACE | — | to(0) | BSPC | num_word
+ * Thumbs: to(0) | — | BSPC/DEL (trans) | to(0) | SPACE (trans) | num_word
  *
  * ============================================================
  * FN (Layer 2): Function keys and mouse
@@ -72,7 +72,7 @@
  * CapsL = Caps Lock (manual toggle)
  * ** = tap-dance safety: single tap = nothing, double-tap = action
  *
- * Thumbs: BT_PRV | BT(0) | BT_NXT | — | — | —
+ * Thumbs: BT_PRV | BT(0) | BT_NXT | DesktopL | — | DesktopR
  */
 
 #include <behaviors.dtsi>
@@ -154,7 +154,7 @@
             // |  —  |  7  |  8  |  9  |  —  |   |  [  |  ]  |  <  |  >  |  |  |
             // |0/Gu↓|4/Al↓|5/Ct↓|6/Sf↑|  —  |   |  {  |}/ ↑ |^/Ct↓|`/Al↓|~/Gu↓|
             // |  .  |  1  |  2  |  3  |  —  |   |  `  |  ´  |  §  |  °  |  —  |
-            //       | to(0) |  —  | BSPC | to(0) | Space | num_word |
+            //       | to(0) |  —  | BSPC/DEL (trans) | to(0) | Space (trans) | num_word |
 
             bindings = <
                 &none                        &kp DE_N7                &kp DE_N8                    &kp DE_N9                    &none      &kp DE_LBKT   &kp DE_RBKT                      &kp DE_LT                         &kp DE_GT                    &kp DE_PIPE
@@ -194,7 +194,7 @@
             // |BtClrAll**| Next | VolUp |RGB_OFF|StudioUnlk|  |PgUp | Home | Up   | End  |BtClr** |
             // |    —     | Prev | VolDn |   —   |    —     |  |PgDn | Left | Down | Rght |Reset** |
             // |  Boot**  | Play | Mute  |MicMute|    —     |  |CapsL|  —   |PrtSc |  —   |Boot**  |
-            //            | BT_PRV | BT(0) | BT_NXT |   |  DesktopW  |  —  |  DesktopP  |
+            //            | BT_PRV | BT(0) | BT_NXT | DesktopL |  —  | DesktopR |
 
             bindings = <
                 &td_bt_clr_all  &kp C_NEXT  &kp C_VOL_UP  &rgb_ug RGB_OFF  &studio_unlock   &kp PG_UP     &kp HOME  &kp UP    &kp END    &td_bt_clr
