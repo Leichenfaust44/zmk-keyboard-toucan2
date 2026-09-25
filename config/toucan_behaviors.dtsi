@@ -492,33 +492,3 @@ bspc_del: backspace_delete {
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
 
-// -----------------------------------------------------------------------------
-// SMART SHIFT
-// -----------------------------------------------------------------------------
-// Three-in-one shift key for the right thumb:
-//   Tap        = Sticky Shift (&sk LSHIFT) — capitalises the next keypress only
-//   Hold       = Regular Shift (&kp LSHIFT) — works like a standard shift key
-//   Double-tap = Caps Word — capitalises until a word boundary is reached
-//
-// Double-tap is implemented as a mod-morph (Shift + tap → Caps Word),
-// avoiding tap-dance delays on every single tap.
-// -----------------------------------------------------------------------------
-
-// Tap = sticky-shift; when already shifted (from the hold), tap → caps_word.
-smart_shift: smart_shift {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&sk LSHIFT>, <&caps_word>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-};
-
-// Hold = regular shift, Tap = smart_shift (sticky-shift / caps-word).
-// Timing: 200ms tapping term, tap-preferred to keep single taps snappy.
-shift_morph: shift_morph {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <175>;
-    bindings = <&kp>, <&smart_shift>;
-};

@@ -23,7 +23,6 @@ parse_config:
     - space_nav
     - magic_key
     - glyph_tap
-    - shift_morph
   raw_binding_map:
     # Numbers
     '&kp DE_N0': '0'
@@ -142,7 +141,6 @@ parse_config:
     '&mt DE_EXCL DE_QMARK': {t: '?', h: '!'}
     # Thumb cluster hold-taps
     '&space_nav 3 DE_SPACE': {t: '$$mdi:keyboard-space$$', h: 'Nav'}
-    '&shift_morph LSHIFT 0': {t: 'Smart Shift', h: '$$mdi:apple-keyboard-shift$$'}
     # Combo outputs — clipboard
     '&kp LC(C)': '$$mdi:content-copy$$'
     '&kp LC(V)': '$$mdi:content-paste$$'
