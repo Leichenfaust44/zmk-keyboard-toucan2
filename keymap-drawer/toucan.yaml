@@ -34,7 +34,7 @@ layers:
   - {t: '$$mdi:keyboard-esc$$', h: FN}
   - {t: ✦, h: Nav}
   - {t: '$$mdi:backspace-outline$$', h: '$$mdi:backspace-reverse-outline$$'}
-  - {t: Smart Shift, h: '$$mdi:apple-keyboard-shift$$'}
+  - CapsL
   - $$mdi:keyboard-space$$
   - {t: №, h: Sym}
   Sym:

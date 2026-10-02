@@ -49,7 +49,7 @@ Two separate behaviors are used — Shift activates faster, Ctrl/Alt/Super requi
 **Thumb cluster:**
 
 ```
-ESC (hold: FN) | MagicKey (hold: Nav) | Backspace/Del | SmartShift | Space | Sym
+ESC (hold: FN) | MagicKey (hold: Nav) | Backspace/Del | CapsLock | Space | Sym
 ```
 
 ---
@@ -62,8 +62,7 @@ ESC (hold: FN) | MagicKey (hold: Nav) | Backspace/Del | SmartShift | Space | Sym
 | **MagicKey** | Adaptive key (see below) | Nav layer |
 | **Backspace** | Backspace | — |
 | **Backspace** (with Shift) | Delete | — |
-| **SmartShift** | Sticky Shift (capitalises next key only) | Regular Shift |
-| **SmartShift** (double-tap) | Caps Word (capitalises until word boundary) | — |
+| **CapsLock** | Toggle Caps Lock | — |
 | **Space** | Plain space | — |
 | **Sym** | `num_word` (auto-exit number layer) | Momentary Sym layer |
 
@@ -172,7 +171,7 @@ N+X → '    R+Q → %    T+M → \    S+W → =
 **Symbols — right hand vertical (top+home / home+bottom):**
 
 ```
-Y+H → +    O+A → *    U+E → €    ?+I → Copy
+F+H → +    O+A → *    U+E → €    ?+I → Copy
 H+P → -    A+, → /    E+. → &    I+- → Paste
 ?+- → Cut  (top+bottom pinky stretch)
 ```

@@ -132,7 +132,7 @@
             // |  B  |  L  |  D  |  C  |  V  |   |  J  |  F  |  O  |  U  | ?/! |
             // |N/Gu↓|R/Al↓|T/Ct↓|S/Sf↑|  G  |   |  Y  |H/Sf↑|A/Ct↓|E/Al↓|I/Gu↓|
             // |  X  |  Q  |  M  |  W  |  Z  |   |  K  |  P  | ,/; | ./: | -/_ |
-            //       | ESC(FN) | MagicKey(Nav) | BSPC | SmartShift | Space | Sym |
+            //       | ESC(FN) | MagicKey(Nav) | BSPC | CapsLock | Space | Sym |
             // ↑ = fast (hml_shift / hmr_shift)
             // ↓ = slow (hml_slow  / hmr_slow)
 
