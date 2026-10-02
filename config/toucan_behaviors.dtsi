@@ -293,7 +293,7 @@ uml_u_mm: uml_u_mod_morph {
 // The Magic Key provides intelligent repeat and context-aware substitutions.
 //
 // Adaptive substitutions (within timeout window):
-//   Letter bigrams: E→U P→F
+//   Letter bigrams: e→u E→u  p→f P→f
 //   Special pairs:  -→>
 //   Umlauts (1s):   a→ä A→Ä o→ö O→Ö u→ü U→Ü
 //   Default:        nothing (no key repeat)
@@ -337,6 +337,14 @@ magic_key_tap: magic_key_tap {
         strict-modifiers;
     };
 
+    // E (Shift) → output u (lowercase) — same bigram after a capitalised E
+    repeat_e_upper {
+        trigger-keys = <LS(E)>;
+        bindings = <&kp U>;
+        max-prior-idle-ms = <5000>;
+        strict-modifiers;
+    };
+
     // o → ö
     repeat_o {
         trigger-keys = <O>;
@@ -356,6 +364,14 @@ magic_key_tap: magic_key_tap {
     // P → output F (bigram «pf»: SFB Zeigefinger rechts, «Pferd/Kopf/Pfanne»)
     repeat_p {
         trigger-keys = <P>;
+        bindings = <&kp F>;
+        max-prior-idle-ms = <5000>;
+        strict-modifiers;
+    };
+
+    // P (Shift) → output f (lowercase) — same bigram after a capitalised P
+    repeat_p_upper {
+        trigger-keys = <LS(P)>;
         bindings = <&kp F>;
         max-prior-idle-ms = <5000>;
         strict-modifiers;
